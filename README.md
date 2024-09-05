@@ -19,9 +19,7 @@ The **Kalman Filter** is an algorithm that uses a series of measurements over ti
 
 ### 1. Predict
 - **State Prediction**: 
-  $
-  \hat{x}_{k|k-1} = F_k \hat{x}_{k-1} + B_k u_k
-  $
+  $$\hat{x}\_{k|k-1} = F_k \hat{x}\_{k-1} + B_k u_k$$
   Where:
   - $\hat{x}_{k|k-1}$ is the predicted state at time step $k$,
   - $F_k$ is the state transition model,
@@ -30,7 +28,7 @@ The **Kalman Filter** is an algorithm that uses a series of measurements over ti
 
 - **Covariance Prediction**: 
   $
-  P_{k|k-1} = F_k P_{k-1} F_k^T + Q_k
+  P\_{k|k-1} = F\_k P\_{k-1} F\_k^T + Q_k
   $
   Where:
   - $P_{k|k-1}$ is the predicted estimate covariance,
