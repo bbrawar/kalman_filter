@@ -18,7 +18,8 @@ The **Kalman Filter** is an algorithm that uses a series of measurements over ti
 ## Kalman Filter Algorithm
 
 ### 1. Predict
-- **State Prediction**: 
+- **State Prediction**:
+  
   $$\hat{x}\_{k|k-1} = F_k \hat{x}\_{k-1} + B_k u_k$$
   Where:
   - $\hat{x}_{k|k-1}$ is the predicted state at time step $k$,
@@ -26,35 +27,34 @@ The **Kalman Filter** is an algorithm that uses a series of measurements over ti
   - $B_k$ is the control-input model,
   - $u_k$ is the control input.
 
-- **Covariance Prediction**: 
-  $
-  P\_{k|k-1} = F\_k P\_{k-1} F\_k^T + Q_k
-  $
+- **Covariance Prediction**:
+  
+  $P\_{k|k-1} = F\_k P\_{k-1} F\_k^T + Q_k$
+  
   Where:
   - $P_{k|k-1}$ is the predicted estimate covariance,
   - $Q_k$ is the process noise covariance.
 
 ### 2. Update (Correction)
 - **Kalman Gain**:
-  $
-  K_k = P_{k|k-1} H_k^T (H_k P_{k|k-1} H_k^T + R_k)^{-1}
-  $
+  
+  $K\_k = P\_{k|k-1} H\_k^T (H\_k P\_{k|k-1} H\_k^T + R\_k)^{-1}$
+  
   Where:
   - $K_k$ is the Kalman gain,
   - $H_k$ is the observation model,
   - $R_k$ is the measurement noise covariance.
 
 - **State Update**:
-  $
-  \hat{x}_k = \hat{x}_{k|k-1} + K_k (z_k - H_k \hat{x}_{k|k-1})
-  $
+  
+  $\hat{x}\_k = \hat{x}\_{k|k-1} + K\_k (z\_k - H\_k \hat{x}\_{k|k-1})$
+  
   Where:
   - $z_k$ is the actual measurement.
 
 - **Covariance Update**:
-  $
-  P_k = (I - K_k H_k) P_{k|k-1}
-  $
+  
+  $P_k = (I - K_k H_k) P_{k|k-1}$
 
 ## Applications of Kalman Filter
 1. **Navigation and Control**: Used in systems like GPS and autopilot to estimate position, velocity, and other state variables.
